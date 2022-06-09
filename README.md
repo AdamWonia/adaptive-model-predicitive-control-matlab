@@ -12,15 +12,15 @@ aMPC controller block has some input parameters like:
   - n - number of samples - 
   - ....
 
-# How it works
+## How it works
 
-# Launch
+## Launch
 
-# Summary
+## Summary
 
 - opis projektu
 
-# TO DO
+## TO DO
 - what is an MPC controller
 - what is an adaptive MPC and what are the advantages of it
 - math formulas of algorithm
