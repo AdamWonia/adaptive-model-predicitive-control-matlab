@@ -4,10 +4,10 @@ sim_time = 650;
 % Sample time for model:
 Ts = 0.5;
 
-% Rho coefficient:
+% Objective function weight for control signal:
 rho = 5;
 
-% Number of samples:
+% Order of polynomial describing object in form of impulse response:
 n = 50;
 
 % Prediction horizon:
