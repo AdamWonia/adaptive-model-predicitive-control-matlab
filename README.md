@@ -30,7 +30,9 @@ It uses the step response of the control object to estimate its parameters. In t
 
 ## Launch
 
- - how to lauch the program and how to use it
+To run the program, please run the Matlab environment and open the **aMPC_parameters.m** file. After that click on the Run button. Next run the Simulink toolbox and open **aMPC_simulink_model.slx** file. Click Run button to start the simulation. On the scope you can see some charts... TO DO
+
+How to lauch the program and how to use it
 
 ## Summary
 
