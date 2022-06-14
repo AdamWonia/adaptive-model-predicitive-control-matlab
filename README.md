@@ -30,19 +30,19 @@ It uses the step response of the control object to estimate its parameters. In t
 
 ## Launch
 
-To run the program, please run the Matlab environment and open the **aMPC_parameters.m** file. After that click on the Run button. Next run the Simulink toolbox and open **aMPC_simulink_model.slx** file. Click Run button to start the simulation. On the scope you can see some charts... TO DO
-
-How to lauch the program and how to use it
+To run the program, please run the Matlab environment and open the **aMPC_parameters.m** file. After that click on the Run button. Next run the Simulink toolbox and open **aMPC_simulink_model.slx** file. Click Run button to start the simulation. On the scope you can see some diagram like control object output, reference trajectory and control signal increment. 
 
 ## Summary
 
-- co można jeszcze zmienić
-- co można dodać od siebie
+The project is a good base for further development. You can try to add a different control object, more complex to see if the algoritm will also work well. There is a plenty parameters to adjust and see how they affect the system. You can also try experimenting with another parameter estimation mechanism like LSE (Least Square Error). 
+
+This algorithm was made for study exercises and tested in different ways. You can try to destabilise this system by adjusing its parameters.
 
 ## TO DO
 - math formulas of algorithm
 - parameters to adjust
 - description of control object and disturbances
 
+Math equations:
 When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
