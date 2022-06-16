@@ -20,7 +20,7 @@ Model Predictive Control is based on using a mathematical model of control objec
 
 Control quality indicator can be desribed by an equation given below:
 
-$$ min J = \sum_{j=1}^{H}$$
+$$ min_J = \sum_{j=1}^{H}$$
 
 ${ [$\overline{y} }$
 
