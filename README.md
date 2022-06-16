@@ -18,9 +18,9 @@ aMPC controller block has some input parameters like:
 
 Model Predictive Control is based on using a mathematical model of control object to predict its behaviour a few moments ahead, at the prediction horizon, on the basis of a known reference trajectory. The idea is to determine the control signal values, on the control horizon, which are applied to the object at a given moment in time specified by a sample time. Control signal values are calculated in such a way as to minimise a certain control quality indicator J. Thanks to this solution, it is possible to generate the appropriate control signal earlier, before a change of the setpoint occurs. 
 
-Control quality indicator can be desribed by an eqution given below:
+Control quality indicator can be desribed by an equation given below:
 
-** J = ... **
+** min J = \sum_{i=1}^{10} t_i **
 
 The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The estimation mechanism is based on the recursive gradient method, which is described below.
 
