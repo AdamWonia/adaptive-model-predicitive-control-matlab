@@ -24,7 +24,7 @@ $$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w_{o}(i+j) ]^{2} + \rho 
 
 The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The estimation mechanism is based on the recursive gradient method, which is described below.
 
-$$ \varepsilon (i) = \theta^{T} \varphi - y(i) $$
+$$ \varepsilon (i) = \theta^{T} \varphi (i) - y(i) $$
 
 It uses the step response of the control object to estimate its parameters. In the first moments of time, this object is excited by a constant control signal in order to obtain the step response. On the basis of the collected response samples, the object parameters used in the AMPC algorithm are determined.
 
