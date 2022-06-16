@@ -20,7 +20,7 @@ Model Predictive Control is based on using a mathematical model of control objec
 
 Control quality indicator can be desribed by an equation given below:
 
-** min J = \sum_{i=1}^{10} t_i **
+** min J = $\sum_{i=1}^{10} t_i$ **
 
 The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The estimation mechanism is based on the recursive gradient method, which is described below.
 
