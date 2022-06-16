@@ -20,23 +20,11 @@ Model Predictive Control is based on using a mathematical model of control objec
 
 Control quality indicator can be desribed by an equation given below:
 
-$$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w^{o}(i+j) ]^{2} + \rho \Delta u^{2} (i+j-1) \right) $$ 
-
-$$\{1, 2, 3\}$$
-
-${ [$\overline{y} }$
-
-(i+j)
-
-$ - $w_{o}$(i+j)]^{2} + $\rho\Delta$u^{2}(i+j-1)}$
-
-
-
-
+$$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w_{o}(i+j) ]^{2} + \rho \Delta u^{2} (i+j-1) \right) $$ 
 
 The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The estimation mechanism is based on the recursive gradient method, which is described below.
 
-** EST = ... **
+$$ \varepsilon (i) = \theta^{T} \varphi - y(i) $$
 
 It uses the step response of the control object to estimate its parameters. In the first moments of time, this object is excited by a constant control signal in order to obtain the step response. On the basis of the collected response samples, the object parameters used in the AMPC algorithm are determined.
 
