@@ -22,11 +22,16 @@ Control quality indicator can be desribed by an equation given below:
 
 $$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w_{o}(i+j) ]^{2} + \rho \Delta u^{2} (i+j-1) \right) $$ 
 
-The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The estimation mechanism is based on the recursive gradient method, which is described below.
+where:
+- \overline{y}(i+j) - prediction of the output signal for j time, calculated in i time,
+- \Delta u(i+j) - control signal increment, \Delta u(i+j) = u(i+j) - u(i-1),
+- w_{o}(i+j) - reference trajectory for i time, calculated for j time,
 
-$$ \varepsilon (i) = \theta^{T} \varphi (i) - y(i) $$
+The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The gradient method uses an approximation of the gradient of the objective function to obtain the largest error drop in a given step.
 
 It uses the step response of the control object to estimate its parameters. In the first moments of time, this object is excited by a constant control signal in order to obtain the step response. On the basis of the collected response samples, the object parameters used in the AMPC algorithm are determined.
+
+ ** control algorithm formulas and linked it here **
 
 ## Launch
 
@@ -41,8 +46,4 @@ This algorithm was made for study exercises and tested in different ways. You ca
 ## TO DO
 - math formulas of algorithm
 - parameters to adjust
-- description of control object and disturbances
 
-Math equations:
-When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are 
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
