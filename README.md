@@ -24,7 +24,7 @@ $$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w_{o}(i+j) ]^{2} + \rho 
 
 w chwili i na chwilę j-tą
 
-$$ min  J = \sum_{i=1}^{H} \left( [ \overline{y}(k+i|k) - y(k+i|k) ]^{2}\right) + \sum_{i=0}^{L-1} \rho \Delta u^{2} (k+i|k) $$ 
+$$ min  J = \sum_{i=1}^{H} \left( \overline{y}(k+i|k) - y(k+i|k) \right)^{2} + \sum_{i=0}^{L-1} \left(\rho \Delta u(k+i|k) \right)^{2} $$ 
 
 - inne dać kryterium i ch
 
