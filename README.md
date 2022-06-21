@@ -2,17 +2,17 @@
 
 ## Description
 
-This repository contains a project of adaptive Model Predicitive Control (aMPC) algorithm which is made using Matlab/Simulink environment. First file **xxx.m** is the Matlab script in which are stored all variables needed to start a Simulink model of the system. The Simulink model consists of two main elements:
+This repository contains a project of adaptive Model Predicitive Control (aMPC) algorithm which is made using Matlab/Simulink environment. First file **aMPC_parameters.m** is the Matlab script in which are stored all variables needed to start a Simulink model of the system. The Simulink model consists of two main elements:
   - control object - simple, first order inertia with variable parameterers like static gain K, time constant T and transport delay. All these parameters can be switched between different changing. 
   - aMPC controller - block which contains main algorithm of a control system, but also reference trajectory which could be modified.
 
 aMPC controller block has some input parameters like:
-  - rho - objective function weight for control signal
-  - L - control horizon
-  - H - prediction horizon 
-  - Ts - sample time
-  - n - order of polynomial describing the object in the form of impulse response
-  - t - clock input specifying the current time
+  - rho - objective function weight for control signal,
+  - L - control horizon,
+  - H - prediction horizon,
+  - Ts - sample time,
+  - n - order of polynomial describing the object in the form of impulse response,
+  - t - clock input specifying the current time.
 
 ## How it works
 
@@ -22,16 +22,20 @@ Control quality indicator can be desribed by an equation given below:
 
 $$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w_{o}(i+j) ]^{2} + \rho \Delta u^{2} (i+j-1) \right) $$ 
 
+w chwili i na chwilę j-tą
+
+$$ min  J = \sum_{i=1}^{H} \left( [ \overline{y}(k+i|k) - y(k+i|k) ]^{2}\right) + \sum_{i=0}^{L-1} \rho \Delta u^{2} (k+i|k) $$ 
+
+- inne dać kryterium i ch
+
 where:
 - \overline{y}(i+j) - prediction of the output signal for j time, calculated in i time,
 - \Delta u(i+j) - control signal increment, \Delta u(i+j) = u(i+j) - u(i-1),
-- w_{o}(i+j) - reference trajectory for i time, calculated for j time,
+- w_{o}(i+j) - reference trajectory for i time, calculated for j time.
 
 The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The gradient method uses an approximation of the gradient of the objective function to obtain the largest error drop in a given step.
 
 It uses the step response of the control object to estimate its parameters. In the first moments of time, this object is excited by a constant control signal in order to obtain the step response. On the basis of the collected response samples, the object parameters used in the AMPC algorithm are determined.
-
- ** control algorithm formulas and linked it here **
 
 ## Launch
 
@@ -39,11 +43,6 @@ To run the program, please run the Matlab environment and open the **aMPC_parame
 
 ## Summary
 
-The project is a good base for further development. You can try to add a different control object, more complex to see if the algoritm will also work well. There is a plenty parameters to adjust and see how they affect the system. You can also try experimenting with another parameter estimation mechanism like LSE (Least Square Error). 
+The project is a good base for further development. You can try to add a different control object, more complex to see if the algoritm will also work well. There is a plenty parameters to adjust and see how they affect the system. You can also try experimenting with another parameter estimation mechanism like LSE (Least Square Error).
 
-This algorithm was made for study exercises and tested in different ways. You can try to destabilise this system by adjusing its parameters.
-
-## TO DO
-- math formulas of algorithm
-- parameters to adjust
-
+This algorithm was made for study exercises and tested in different ways.
