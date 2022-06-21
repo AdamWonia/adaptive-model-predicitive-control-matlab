@@ -24,14 +24,12 @@ $$ min  J = \sum_{j=1}^{H} \left( [ \overline{y}(i+j) - w_{o}(i+j) ]^{2} + \rho 
 
 w chwili i na chwilę j-tą
 
-$$ min  J = \sum_{i=1}^{H} \left[ \overline{y}(k+i|k) - y(k+i|k) \right]^{2} + \rho \sum_{i=0}^{L-1} \left[\Delta u(k+i|k) \right]^{2} $$ 
-
-- inne dać kryterium i ch
+$$ min  J = \sum_{i=1}^{H} \left[ \overline{y}(k+i|k) - y_{ref}(k+i|k) \right]^{2} + \rho \sum_{i=0}^{L-1} \left[\Delta u(k+i|k) \right]^{2} $$ 
 
 where:
-- \overline{y}(i+j) - prediction of the output signal for j time, calculated in i time,
-- \Delta u(i+j) - control signal increment, \Delta u(i+j) = u(i+j) - u(i-1),
-- w_{o}(i+j) - reference trajectory for i time, calculated for j time.
+- \overline{y}(k+i|k) - prediction of the output signal for k+i time, calculated in k time,
+- \Delta u(k+i|k) - control signal increment for k+i time, calculated in k time,
+- y_{ref}(i+j) - reference trajectory for k+i time, calculated in k time.
 
 The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The gradient method uses an approximation of the gradient of the objective function to obtain the largest error drop in a given step.
 
