@@ -33,7 +33,7 @@ In the first moments of time, this controlled object is excited by a constant co
 
 ## Launch
 
-To run the program, start the Matlab environment and open the **aMPC_parameters.m** file. Then click on the Run button. Then run the Simulink toolbox and open the **aMPC_simulink_model.slx** file. Click the Run button to start the simulation. The scope shows graphs such as the control object output, reference trajectory and control signal increment. 
+To run the program, start the Matlab environment and open the **aMPC_parameters.m** file. Then click on the Run button. Then run the Simulink toolbox and open the **aMPC_simulink_model.slx** file. Click the Run button to start the simulation. The scope shows graphs such as the control object output, control object model output, reference trajectory and control signal increment.
 
 ## Summary
 
