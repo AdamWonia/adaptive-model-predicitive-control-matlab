@@ -23,9 +23,9 @@ The control quality indicator can be described by the equation given below:
 $$ min J = \sum_{i=1}^{H} \left[ y(k+i|k) - y_{ref}(k+i|k) \right]^{2} + \rho \sum_{i=0}^{L-1} \left[\Delta u(k+i|k) \right]^{2} $$  
 
 where:
-- y(k+i|k) - prediction of the output signal at time k+i, calculated at time k,
-- $\Delta$ u(k+i|k) - increment of the control signal at time k+i, calculated at time k,
-- y<sub>ref</sub>(k+i|k) - reference trajectory at time k+i, calculated at time k.
+- $y(k+i|k)$ - prediction of the output signal at time k+i, calculated at time k,
+- $\Delta u(k+i|k)$ - increment of the control signal at time k+i, calculated at time k,
+- $y_{ref}(k+i|k)$ - reference trajectory at time k+i, calculated at time k.
 
 The adaptive MPC control system additionally uses a mechanism of estimation of control object parameters. This allows it to adapt to changing operating conditions. Thus, the model of the controlled object is determined on an ongoing basis during the operation of the control system. The gradient method was used to estimate the parameters of the object. The gradient method uses an approximation of the gradient of the objective function in order to obtain the greatest decrease in error in a given step.
 
