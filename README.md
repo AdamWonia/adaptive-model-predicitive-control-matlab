@@ -14,36 +14,29 @@ The aMPC controller block has some input parameters, such as
   - n - order of the polynomial describing the object in the form of impulse response,
   - t - clock input specifying the current time.
 
-
-
-
-
-
-
-
 ## How it works
 
-Model Predictive Control is based on using a mathematical model of control object to predict its behaviour a few moments ahead, at the prediction horizon, on the basis of a known reference trajectory. The idea is to determine the control signal values, on the control horizon, which are applied to the object at a given moment in time specified by a sample time. Control signal values are calculated in such a way as to minimise a certain control quality indicator J. Thanks to this solution, it is possible to generate the appropriate control signal earlier, before a change of the setpoint occurs. 
+Model Predictive Control is based on using a mathematical model of a control object to predict its behaviour a few moments ahead, at the prediction horizon, based on a known reference trajectory. The idea is to determine the values of control signals at the control horizon that are applied to the object at a given moment in time defined by the sampling time. The values of the control signals are calculated in such a way as to minimise a certain control quality indicator *J*. This makes it possible to generate the appropriate control signal in advance, before the setpoint is changed, and by limiting the influence of uncertainties in the system.
 
-Control quality indicator can be desribed by an equation given below:
+The control quality indicator can be described by the equation given below:
 
-$$ min  J = \sum_{i=1}^{H} \left[ \overline{y}(k+i|k) - y_{ref}(k+i|k) \right]^{2} + \rho \sum_{i=0}^{L-1} \left[\Delta u(k+i|k) \right]^{2} $$ 
+$$ min J = \sum_{i=1}^{H} \left[ \overline{y}(k+i|k) - y_{ref}(k+i|k) \right]^{2} + \rho \sum_{i=0}^{L-1} \left[\Delta u(k+i|k) \right]^{2} $$  
 
 where:
-- \overline{y}(k+i|k) - prediction of the output signal for k+i time, calculated in k time,
-- \Delta u(k+i|k) - control signal increment for k+i time, calculated in k time,
-- y_{ref}(i+j) - reference trajectory for k+i time, calculated in k time.
+- {y}(k+i|k) - prediction of the output signal at time k+i, calculated at time k,
+- delta u(k+i|k) - increment of the control signal at time k+i, calculated at time k,
+- y_{ref}(k+i|k) - reference trajectory at time k+i, calculated at time k.
 
-The adaptive MPC control system additionally uses a mechanism for estimating the parameters of the control object. Thanks to this it can adapt itself to changing operating conditions. The gradient method uses an approximation of the gradient of the objective function to obtain the largest error drop in a given step.
+The adaptive MPC control system additionally uses a mechanism of estimation of control object parameters. This allows it to adapt to changing operating conditions. Thus, the model of the controlled object is determined on an ongoing basis during the operation of the control system. The gradient method was used to estimate the parameters of the object. The gradient method uses an approximation of the gradient of the objective function in order to obtain the greatest decrease in error in a given step.
 
-It uses the step response of the control object to estimate its parameters. In the first moments of time, this object is excited by a constant control signal in order to obtain the step response. On the basis of the collected response samples, the object parameters used in the AMPC algorithm are determined.
+In the first moments of time, this controlled object is excited by a constant control signal to obtain a step response. From the collected samples of this response, the estimation algorithm determines the parameters of the controlled object that are used in the control algorithm.
 
 ## Launch
 
-To run the program, please run the Matlab environment and open the **aMPC_parameters.m** file. After that click on the Run button. Next run the Simulink toolbox and open **aMPC_simulink_model.slx** file. Click Run button to start the simulation. On the scope you can see some diagram like control object output, reference trajectory and control signal increment. 
+To run the program, start the Matlab environment and open the **aMPC_parameters.m** file. Then click on the Run button. Then run the Simulink toolbox and open the **aMPC_simulink_model.slx** file. Click the Run button to start the simulation. The scope shows graphs such as the control object output, reference trajectory and control signal increment. 
 
 ## Summary
 
-The project is a good base for further development. You can try to add a different control object, more complex to see if the algoritm will also work well. There is a plenty parameters to adjust and see how they affect the system. You can also try experimenting with another parameter estimation mechanism like LSE (Least Square Error).
+The project is a good base for further development. You could try adding another control object, more complex, to see if the algorithm would also work well. There are many parameters that you can adjust and see how they affect the system. You could also try experimenting with another parameter estimation mechanism such as LSE (Least Square Error).
 
-This algorithm was made for study exercises and tested in different ways.
+This algorithm was created for research exercises and has been tested in various ways.
