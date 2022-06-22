@@ -3,7 +3,7 @@
 ## Description
 
 This repository contains the project of an adaptive Model Predictive Control (aMPC) algorithm that was executed using the Matlab/Simulink environment. The first file **aMPC_parameters.m** is a Matlab script that stores all the variables needed to run the system model in the Simulink environment. The Simulink model consists of two main elements:
-  - a control object - first order inertia with variable parameters such as static gain K, time constant T and transport delay $$ T_{0} $$. It is possible to choose the characteristics of the changes of the given parameters. 
+  - a control object - first order inertia with variable parameters such as static gain K, time constant T and transport delay T<sub>0</sub>. It is possible to choose the characteristics of the changes of the given parameters. 
   - aMPC controller - a block containing the main control system algorithm, but also a reference trajectory that can be modified.
 
 The aMPC controller block has some input parameters, such as
